@@ -1,0 +1,33 @@
+.flip {
+	width: 320px;
+	height: auto;
+	&--3d {
+		perspective: 1000px;
+	}
+	&__control {
+		transform-style: preserve-3d;
+		transition: 0.6s;
+		position: relative;
+	}
+	&.isFlipped &__control {
+		transform: rotateY(180deg);
+	}
+	// &__front, &__back {
+	// 	width: 320px;
+	// 	height: 480px;
+	// }
+	&__front, &__back {
+		backface-visibility: hidden;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+	&__front {
+		z-index: 2;
+		transform: rotateY(0deg);
+	}
+
+	&__back {
+		transform: rotateY(180deg);
+	}
+}

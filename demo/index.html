@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Flipster.js Demo</title>
+	<link rel="stylesheet" href="css/flipster.min.css">
+</head>
+<body>
+
+	<div id="sample1--wrapper" class="sample--wrapper">
+		<div id="sample1">
+			<div class="front">
+				<img src="img/flipsie-1.jpg" alt="">
+			</div>
+			<div class="back">
+				<img src="img/flipsie-2.jpg" alt="">
+			</div>
+		</div>
+	</div>
+
+	<div id="sample2--wrapper" class="sample--wrapper">
+		<div id="sample2">
+			<div class="front">
+				<img src="img/flipsie-1.jpg" alt="">
+			</div>
+			<div class="back">
+				<img src="img/flipsie-2.jpg" alt="">
+			</div>
+		</div>
+	</div>
+
+	<p class="note">If the images above are yours and you'd prefer they not be used, please don't sue. Simply contact me and I'll be happy to find alternatives.</p>
+
+	<!-- It's a mess right now, but it'll get there eventually. Right now, I need to get back to work. -->
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="js/flipster.min.js"></script>
+
+	<script>
+	$('#sample1').flipsie({
+		depth: true,
+		trigger: 'click',
+		frontFace: '.front',
+		backFace: '.back'
+	});
+	$('#sample2').flipsie({
+		depth: false,
+		trigger: 'hover',
+		frontFace: '.front',
+		backFace: '.back'
+	});
+	</script>
+
+	<style>
+	img {width:100%;}
+	.note{position: absolute;bottom: 0;}
+	.sample--wrapper{display: inline-block;text-align: center;}
+	.description{display: block;position: relative;}
+	</style>
+</body>
+</html>
